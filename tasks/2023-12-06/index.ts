@@ -3,7 +3,7 @@ enum InvalidState {
 }
 
 export class OrderController {
-  machines = new Set<Machine>();
+  private machines = new Set<Machine>();
 
   registerMachine(machine: Machine) {
     this.machines.add(machine);
