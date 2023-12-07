@@ -18,8 +18,7 @@ export class OrderController {
       throw new Error("Invalid state provided");
     }
     this.machines.forEach((machine) => {
-      machine.state = state;
-      machine.addToLog(state);
+      machine.setState(state);
     });
   }
 }
@@ -35,7 +34,9 @@ export class Machine {
     });
   }
 
-  addToLog(state: string) {
+  setState(state: string) {
+    this.state = state;
     this.statesLog.push(state);
   }
+
 }
